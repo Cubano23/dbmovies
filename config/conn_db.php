@@ -12,7 +12,7 @@ class ConnDB
     {
         try
         {
-            $this->conn = new PDO("mysql:host=localhost;dbname=dbmovies", 'root', 'root');
+            $this->conn = new PDO("mysql:host=localhost;dbname=bruno-soares", 'bruno-soares', 'LegTux14122302!');
             //On définit le mode d'erreur de PDO sur Exception
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->conn;

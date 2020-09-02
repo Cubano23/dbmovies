@@ -72,7 +72,7 @@ function addFilmToCart(movie)
     tableau.Titre = title;
     tableau.Annee = year;     
     tableau.id = id; 
-    tableau.Prix = prix; 
+    tableau.Prix = prix;
   
     // j'ajoute a mon tableau des films.
     tableauAdd.push(tableau);
@@ -121,7 +121,6 @@ window.onload = function () {
   }
   
   };
-
   function supprimerFilm(formId)
   {
     if (confirm("Êtes-vous sûr de vouloir supprimer le film?") == true) {
@@ -132,24 +131,19 @@ window.onload = function () {
     }  
 
 }
-
 function setLike(user_id,movie_id)
 {
   let lk = 1;
-  let url = '../controller/LikeUnlike.php?movie_id='+movie_id+'&user_id='+user_id+'&like='+lk;
- 
+  let url = '../controller/LikeUnlike.php?movie_id='+movie_id+'&user_id='+user_id+'&like='+lk; 
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    location.reload();
       if (xhr.readyState == XMLHttpRequest.DONE) {
-          //alert(xhr.responseText);
-         
+          //alert(xhr.responseText);         
       }
   }
   xhr.open('GET', url, true);
   xhr.send(null);
   }
-
   function setUnlike(user_id,movie_id)
 {
   let lk = 0;
@@ -157,15 +151,20 @@ function setLike(user_id,movie_id)
                                                                                              
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    location.reload();
       if (xhr.readyState == XMLHttpRequest.DONE) {
-          //alert(xhr.responseText);
-        
+          //alert(xhr.responseText);        
       }
   }
   xhr.open('GET', url, true);
   xhr.send(null);
   }
+  /*Reload like dislike*/ 
+  $('#hand-like').on('click', function(){
+    location.reload();
+  });
+  $('#hand-dislike').on('click', function(){
+    location.reload();
+  });
 
   
   

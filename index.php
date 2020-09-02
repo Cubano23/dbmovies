@@ -33,7 +33,7 @@ require("model/user_count.class.php");
 <header class="container-fluid">          
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine - Boutique de films en HD</a>
+      <a class="navbar-brand" href="index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine<p>Boutique de films en HD</p></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,7 +59,7 @@ require("model/user_count.class.php");
               <a class="nav-link" href="afficher_panier/cart.php"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Panier</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="controller/logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
+              <a class="nav-link" href="controller/Logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
           </li>                          
           <?php endif; ?> 
           <?php if(count($_SESSION) < 1): ?>                 
@@ -78,7 +78,8 @@ require("model/user_count.class.php");
 <!-- Affichage du template lié à la vue -->
 <main> 
 <?php if(isset($_SESSION) && count($_SESSION) > 0): ?>
-<h2><i class="fas fa-user-circle fa-3x"></i>&nbsp;&nbsp;Bonjour&nbsp;&nbsp;<?php echo  $_SESSION["first_name"]. " ".$_SESSION["last_name"] ?></h2>
+<h2><i class="fas fa-user-circle fa-3x"></i>&nbsp;&nbsp;Bonjour</h2>
+<h2><?php echo  $_SESSION["first_name"]. " ".$_SESSION["last_name"] ?></h2>
 <?php endif; ?> 
 <div class="container-fluid">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

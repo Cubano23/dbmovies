@@ -35,7 +35,7 @@
 <header class="container-fluid">          
          <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine - Boutique de films en HD</a>
+      <a class="navbar-brand" href="index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine<p>Boutique de films en HD</p></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -58,7 +58,7 @@
               <a class="nav-link" href="afficher_panier/cart.php"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Panier</a>
           </li>
           <li>
-              <a class="nav-link" href="controller/logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
+              <a class="nav-link" href="controller/Logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
           </li>                                       
           <?php endif; ?>            
       </ul>
@@ -66,7 +66,7 @@
   </nav>
 <!--/.Navbar-->
 </header>
-<?php session_start(); ?>
+
 <h1>Mon compte</h1>
 <div class="container-fluid">
     <table class="table table-striped table-dark ">

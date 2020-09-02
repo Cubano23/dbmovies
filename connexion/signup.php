@@ -30,49 +30,45 @@
 <header class="container-fluid">          
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine - Boutique de films en HD</a>
+    <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine<p>Boutique de films en HD</p></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">  
-    <ul class="navbar-nav mr-auto">      
-    <li>
-            <!--<a class="nav-link" href="login.php"><i class="fas fa-plug"></i>&nbsp;&nbsp;Se connecter </a>-->
-    </li>             
+    <ul class="navbar-nav mr-auto">                
+        <li class="nav-item">
+            <a class="nav-link" href="login.php"><i class="fas fa-power-off fa-3x"></i>&nbsp;&nbsp;Se connecter</a>
+        </li>               
     </ul>
 </div>
 </nav>
 <!--/.Navbar-->
 </header>
 <body>
-<?php if(count($_SESSION) < 1): ?> 
-<ul class="btn-conn">
-  <li>
-      <a href="login.php"><i class="fas fa-plug"></i>&nbsp;&nbsp;Se connecter </a>
-  </li> 
-</ul>
-<?php endif; ?> 
+
 <!-- Affichage du template lié à la vue -->
-<main>         
-    <fieldset>
-            <legend>S'inscrire</legend>
-                <form action="../controller/Signup.php" method="post" class="form-group">
-                <div class="form-group">	              
-                    <input class="form-control space-between" type="text" name="first_name" placeholder="Prénom" required> 
-                </div>
-                <div class="form-group">          
-                    <input class="form-control space-between" type="text" name="last_name" placeholder="Nom" required>  
-                </div>
-                <div class="form-group">         
-                    <input class="form-control space-between" type="email" name="email" placeholder="Email" required> 
-                </div>
-                <div class="form-group">          
-                    <input class="form-control space-between" type="password" name="password" placeholder="Mot de passe" required>
-                </div>
-                    <div><hr></div>	
-                    <button type="submit" class="btn btn-success" >Soumettre</button>						
-                </form>
-    </fieldset>	
+<main> 
+    <section class="container-fluid">        
+        <fieldset>
+                <legend>S'inscrire</legend>
+                    <form action="../controller/Signup.php" method="post" class="form-group">
+                    <div class="form-group">	              
+                        <input class="form-control space-between" type="text" name="first_name" placeholder="Prénom" required> 
+                    </div>
+                    <div class="form-group">          
+                        <input class="form-control space-between" type="text" name="last_name" placeholder="Nom" required>  
+                    </div>
+                    <div class="form-group">         
+                        <input class="form-control space-between" type="email" name="email" placeholder="Email" required> 
+                    </div>
+                    <div class="form-group">          
+                        <input class="form-control space-between" type="password" name="password" placeholder="Mot de passe" required>
+                    </div>
+                        <div><hr></div>	
+                        <button type="submit" class="btn btn-success" >Soumettre</button>						
+                    </form>
+        </fieldset>	
+    </section>
 </main>
 <footer>
     <div></div>

@@ -30,15 +30,15 @@
 <header class="container-fluid">          
 <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine - Boutique de films en HD</a>
+      <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine<p>Boutique de films en HD</p></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">  
-      <ul class="navbar-nav mr-auto">      
-        <li>
-            <!-- <a class="nav-link" href="login.php"><i class="fas fa-plug"></i>&nbsp;&nbsp;Se connecter </a>-->
-        </li>             
+      <ul class="navbar-nav mr-auto">                  
+        <li class="nav-item">
+            <a class="nav-link" href="login.php"><i class="fas fa-power-off fa-3x"></i>&nbsp;&nbsp;Se connecter</a>
+        </li>              
       </ul>
     </div>
   </nav>
@@ -47,7 +47,7 @@
 <body>
 <!-- Affichage du template lié à la vue -->
 <main> 
-    <section>	 
+    <section class="container-fluid">	 
         <fieldset>
             <legend>Connexion</legend>								
                 <form action="../controller/Login.php" method="post" class="form-group"> 

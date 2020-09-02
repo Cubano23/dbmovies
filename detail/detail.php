@@ -35,7 +35,7 @@ require("../model/like_unlike.class.php");
 <header class="container-fluid">          
         <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine - Boutique de films en HD</a>
+      <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine<p>Boutique de films en HD</p></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,7 +61,7 @@ require("../model/like_unlike.class.php");
               <a class="nav-link" href="../afficher_panier/cart.php"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Panier</a>
           </li>
           <li>
-              <a class="nav-link" href="../controller/logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
+              <a class="nav-link" href="../controller/Logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
           </li>                                       
           <?php endif; ?>            
       </ul>
@@ -115,7 +115,7 @@ else{
 
 echo "<p><a href='../afficher_trailer/play.php?title=$title&year=$year' class='btn_trailer btn btn-warning' >Bande-Annonce</a></p>";
 echo "<h1>Prix: ".$prix." €</h1>";
-echo "<a href='#' onclick='setLike(".$_SESSION['id'].",".$id.")'><i class='fas fa-thumbs-up'></i></a>&nbsp;<span>".$like['like_nb']."</span> &nbsp;&nbsp; <a href='#' onclick='setUnlike(".$_SESSION['id'].",".$id.")'><i class='fas fa-thumbs-down'></i></a>&nbsp;<span>".$unlike['unlike_nb']."</span>";
+echo "<a href='#' onclick='setLike(".$_SESSION['id'].",".$id.")'><i id='hand-like' class='fas fa-thumbs-up'></i></a>&nbsp;<span>".$like['like_nb']."</span> &nbsp;&nbsp; <a href='#' onclick='setUnlike(".$_SESSION['id'].",".$id.")'><i id='hand-dislike' class='fas fa-thumbs-down'></i></a>&nbsp;<span>".$unlike['unlike_nb']."</span>";
 
 echo " <div id='two'>";
 echo $overview;

@@ -4,8 +4,8 @@ session_start();
 
 define("MAX_RESULTS", 1);
 
-$searchTerm = $_REQUEST['title']; 
-$searchTerm = str_replace(' ', '%20', $searchTerm);
+$title_from_search = $_REQUEST['title']; 
+$searchTerm = str_replace(' ', '%20', $title_from_search);
 
 $year = $_REQUEST['year'];   
 if (empty($searchTerm))
@@ -48,7 +48,7 @@ if (empty($searchTerm))
 <header class="container-fluid">          
         <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine - Boutique de films en HD</a>
+      <a class="navbar-brand" href="../index.php"><i class="fas fa-video fa-3x"></i>&nbsp;3W Cine<p>Boutique de films en HD</p></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -74,7 +74,7 @@ if (empty($searchTerm))
               <a class="nav-link" href="../afficher_panier/cart.php"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Panier</a>
           </li>
           <li>
-              <a class="nav-link" href="../controller/logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
+              <a class="nav-link" href="../controller/Logout.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Déconnexion </a>
           </li>                                       
           <?php endif; ?>            
       </ul>
@@ -115,8 +115,8 @@ if (empty($searchTerm))
             <iframe id="iframe" style="width:100%;height:450px" src="//www.youtube.com/embed/<?php echo $videoId; ?>"data-autoplay-src="//www.youtube.com/embed/<?php echo $videoId; ?>?autoplay=1"></iframe> 
             <?php endif; ?>                    
             </div>
-            <div class="videoInfo">
-            <div class="videoTitle"><b><?php echo $title; ?></b></div>        
+            <!--<div class="videoInfo">-->
+            <div class="videoTitle"><b><?php echo $title_from_search; ?></b></div>        
         <?php 
             }
         }          

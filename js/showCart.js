@@ -2,6 +2,7 @@
     const filmsCart = localStorage.getItem('films'); 
     const filmsCartData = JSON.parse(filmsCart);
     //console.log(filmsCartData[0])
+   
 
     // Extract value from table header. 
     if(filmsCartData !== null){
@@ -21,7 +22,7 @@
     // Create table header row using the extracted headers above.
     var tr = table.insertRow(-1);                   // table row.
 
-    for (var i = 0; i < col.length; i++) {
+    for (var i = 5; i < col.length; i++) {
         var th = document.createElement("th"); 
         th.innerHTML = col[i];
         tr.appendChild(th);

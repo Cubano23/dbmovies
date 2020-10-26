@@ -137,6 +137,7 @@ function setLike(user_id,movie_id)
   let url = '../controller/LikeUnlike.php?movie_id='+movie_id+'&user_id='+user_id+'&like='+lk; 
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
+    location.reload();
       if (xhr.readyState == XMLHttpRequest.DONE) {
           //alert(xhr.responseText);         
       }
@@ -151,6 +152,7 @@ function setLike(user_id,movie_id)
                                                                                              
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
+    location.reload();
       if (xhr.readyState == XMLHttpRequest.DONE) {
           //alert(xhr.responseText);        
       }
@@ -158,13 +160,7 @@ function setLike(user_id,movie_id)
   xhr.open('GET', url, true);
   xhr.send(null);
   }
-  /*Reload like dislike*/ 
-  $('#hand-like').on('click', function(){
-    location.reload();
-  });
-  $('#hand-dislike').on('click', function(){
-    location.reload();
-  });
+
 
   
   

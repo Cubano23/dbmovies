@@ -54,10 +54,7 @@ class LikeUnlikeModel
             $req->execute();
             $resultat = $req->fetch(PDO::FETCH_ASSOC); 
             if($resultat['like_nb'] == '1')
-            {
-                echo ' <script type="text/javascript">';
-                echo ' alert("Vous avez déjà voté.");';
-                echo ' </script>';             
+            {                            
                 return 1;//utilisateur a déjà voté like
             }
             else
@@ -125,10 +122,7 @@ class LikeUnlikeModel
                 $req->execute(); 
                 $resultat = $req->fetch(PDO::FETCH_ASSOC);                
                 if($resultat['unlike_nb'] == '1')
-                {
-                    echo ' <script type="text/javascript">';
-                    echo ' alert("Vous avez déjà voté.");';
-                    echo ' </script>'; 
+                {                    
                     return 1;//utilisateur a déjà voté unlike
                 }
                 else

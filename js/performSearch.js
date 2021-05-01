@@ -20,7 +20,7 @@
 "Pirates of the Caribbean: The Curse of the Black Pearl","Notorious","Castle in the Sky","Prisoners","The Help","Who's Afraid of Virginia Woolf?","Roman Holiday","Spring, Summer, Fall, Winter... and Spring",
 "The Night of the Hunter","Beauty and the Beast","La Strada","Papillon","X-Men: Days of Future Past","Before Sunset","Anatomy of a Murder","The Hustler","The Graduate","The Big Sleep","Underground",
 "Elite Squad: The Enemy Within","Gangs of Wasseypur","Lagaan: Once Upon a Time in India","Paris, Texas","Akira"] */
-let array_titles = ["Wonder Woman","Black Widow","On the road","Free Guy","Top Gun: Maverick","Elysium"];
+let array_titles = ["Wonder Woman","Black Widow","On the road","Free Guy","Top Gun: Maverick","Elysium","F9"];
 
 const randomMovieTitle = array_titles[Math.floor(Math.random() * array_titles.length)];
 console.log(randomMovieTitle)

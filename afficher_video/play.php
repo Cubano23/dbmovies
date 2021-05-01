@@ -91,7 +91,13 @@ $films = $film->getFilmsByUserId($_SESSION['id']);
         <td><?php echo $value['poster'];?></td>
         <td><?php echo $value['title'];?></td>
         <td><?php echo $value['movie_year'];?></td>
-        <td><button type="button" class="btn btn-primary">Play</button></td>
+        <td>
+            <form action="../afficher_trailer/play.php" method="post" id="<?php echo $value['movie_id']; ?>">
+                <input type="hidden" value="<?php echo $value['title']; ?>" name="title">
+                <input type="hidden" value="<?php echo $value['movie_year']; ?>" name="year">
+                <input type="submit"  class="btn btn-primary" value="Play"/>
+            </form>        
+        </td>
         <td>
             <form action="../controller/DeleteMovie.php" method="post" id="<?php echo $value['movie_id']; ?>">
                 <input type="hidden" value="<?php echo $value['movie_id']; ?>" name="movie_id">

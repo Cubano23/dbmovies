@@ -7,6 +7,7 @@ define("MAX_RESULTS", 1);
 $title_from_search = $_REQUEST['title']; 
 $searchTerm = str_replace(' ', '%20', $title_from_search);
 
+
 $year = $_REQUEST['year'];   
 if (empty($searchTerm))
 {
@@ -89,8 +90,9 @@ if (empty($searchTerm))
         <?php                                         
         if (!empty($searchTerm))
         {   
-            $apikey = 'AIzaSyCj1WXac3GB4wVd3RKyDm1xyauSLAnoAKg'; 
-            $googleApiUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' . $searchTerm . 'bande-announce' . '&maxResults=' . MAX_RESULTS . '&key=' . $apikey;
+            $apikey = 'AIzaSyCxUfv3IBZgFcVMIHVeq_nX7qVtklm1gc0'; 
+            $googleApiUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' . $searchTerm .'+'.$year. '+trailer' . '&maxResults=' . MAX_RESULTS . '&key=' . $apikey;
+            //var_dump($googleApiUrl);
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -106,20 +108,28 @@ if (empty($searchTerm))
             <div class="videos-data-container" id="SearchResultsDiv">
                 <h1>Bande-Annonce</h1>
         <?php
-            for ($i = 0; $i < MAX_RESULTS; $i++) {
-                $videoId = $value['items'][$i]['id']['videoId'];
-                $title = $value['items'][$i]['snippet']['title'];
-                $description = $value['items'][$i]['snippet']['description'];
+     
+            if(isset($value['items'][0]['id']['videoId']))
+            {
+                for ($i = 0; $i < MAX_RESULTS; $i++) 
+                {
+                    $videoId = $value['items'][$i]['id']['videoId'];
+                    //var_dump($videoId);
+                    $title = $value['items'][$i]['snippet']['title'];
+                    $description = $value['items'][$i]['snippet']['description'];
         ?> 
-            <?php if(isset($_SESSION) && count($_SESSION) > 0): ?>         
-            <iframe id="iframe" style="width:100%;height:450px" src="//www.youtube.com/embed/<?php echo $videoId; ?>"data-autoplay-src="//www.youtube.com/embed/<?php echo $videoId; ?>?autoplay=1"></iframe> 
-            <?php endif; ?>                    
-            </div>
-            <!--<div class="videoInfo">-->
-            <div class="videoTitle"><b><?php echo $title_from_search; ?></b></div>        
+                <?php if(isset($_SESSION) && count($_SESSION) > 0 && $videoId != null): ?>         
+                <iframe id="iframe" style="width:100%;height:450px" src="https://www.youtube.com/embed/<?php echo $videoId; ?>?autoplay=1" allow='autoplay; encrypted-media' allowfullscreen></iframe> 
+                <?php endif; ?>                    
+                </div>
+                <!--<div class="videoInfo">-->
+                <div class="videoTitle"><b><?php echo $title_from_search .' - '.$year; ?></b></div>        
         <?php 
-            }
-        }          
+                }
+            }else{
+                echo "<p class='quote'>Veuillez réessayer dans 24 heures, votre quote a été expiré.</p>";
+            } 
+        }         
         ?>             
         </div>
 </main>

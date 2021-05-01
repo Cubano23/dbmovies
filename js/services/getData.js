@@ -34,11 +34,12 @@
                     b.push(year); 
                     c.push(overview);
                     newImg.src = "https://image.tmdb.org/t/p/w185" + value.results[i].poster_path;
+                 
                                         
                     if(value.results[i].poster_path == null){
                         newImg.src = "../images/noimage.jpg";                       
                     }
-                    newImg.setAttribute('onclick',"readMore(\""+ a[index].replace(/[^a-zA-Z ]/g, "") + "," + b[index] +","+value.results[i].poster_path+","+value.results[i].id+","+c[index].replace(/[^a-zA-Z ]/g, "") +"\");");                   
+                    newImg.setAttribute('onclick',"readMore(\""+ a[index].replace(/[^a-zA-Z_0-9-]/g, " ") + "," + b[index] +","+value.results[i].poster_path+","+value.results[i].id+","+c[index].replace(/[^a-zA-Z_0-9- ]/g, " ") +"\");");                   
                     fragment.appendChild(newImg.cloneNode(true));
                     title.innerHTML = value.results[i].title + "<p>" + value.results[i].release_date + 
                     "</p>" + "<p>Popularity:</p> " + "<div class='popularity'>" + value.results[i].popularity + "</div>";                 
@@ -47,7 +48,8 @@
                 }
                 document.getElementById('gallery').appendChild(fragment);
                 document.getElementById('title-film').appendChild(fragment);                   
-                console.log(value.results);                                        
+                console.log(value.results); 
+                                                
                
              
             });

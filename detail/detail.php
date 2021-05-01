@@ -115,8 +115,10 @@ else{
 
 echo "<p><a href='../afficher_trailer/play.php?title=$title&year=$year' class='btn_trailer btn btn-warning' >Bande-Annonce</a></p>";
 echo "<h1>Prix: ".$prix." €</h1>";
-echo "<a href='#' onclick='setLike(".$_SESSION['id'].",".$id.")'><i id='hand-like' class='fas fa-thumbs-up'></i></a>&nbsp;<span>".$like['like_nb']."</span> &nbsp;&nbsp; <a href='#' onclick='setUnlike(".$_SESSION['id'].",".$id.")'><i id='hand-dislike' class='fas fa-thumbs-down'></i></a>&nbsp;<span>".$unlike['unlike_nb']."</span>";
-
+if(isset($_SESSION['id']))
+{
+  echo "<a href='#' onclick='setLike(".$_SESSION['id'].",".$id.")'><i id='hand-like' class='fas fa-thumbs-up'></i></a>&nbsp;<span>".$like['like_nb']."</span> &nbsp;&nbsp; <a href='#' onclick='setUnlike(".$_SESSION['id'].",".$id.")'><i id='hand-dislike' class='fas fa-thumbs-down'></i></a>&nbsp;<span>".$unlike['unlike_nb']."</span>";
+}
 echo " <div id='two'>";
 echo $overview;
 echo "</div>";

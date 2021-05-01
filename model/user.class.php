@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors', 'on');
 require("../config/conn_db.php");
-require("../controller/CrypterPassword.php");
 class UserModel
 { 
     public $conn;
@@ -31,7 +30,8 @@ class UserModel
         }
     }
         function checkUserBeforeInsert($email)
-        {        
+        { 
+            $resultat = array();        
             $sql = 'SELECT email FROM users WHERE email = :email';
             $req = $this->conn->prepare($sql);
             $req->bindParam(':email',$email, PDO::PARAM_STR);         
@@ -60,44 +60,20 @@ class UserModel
 
         }
         function checkUserBeforeLogin($email,$password)
-        { 
-            $sql = 'SELECT password FROM users WHERE email = :email';
+        {        
+            $sql = 'SELECT email, password FROM users WHERE email = :email AND password = :password';
             $req = $this->conn->prepare($sql);
             $req->bindParam(':email',$email, PDO::PARAM_STR);
+            $req->bindParam(':password',$password, PDO::PARAM_STR);         
             $req->execute();
-            $resultat = $req->fetch(PDO::FETCH_ASSOC);
-            $pass_a_decrypter = $resultat['password'];
-            $crypter = new CrypterPassword($password);
-            $password_decrypter = $crypter->decrypt($pass_a_decrypter);       
-          
-            if($password == $password_decrypter)
+            if($req->rowCount() < 1)
             {
-                return $resultat['password'];
-            }
+                return 0;//utilisateur inexistant
+            } 
             else
             {
-                return 0;//Wrong password 
-            }
-                //$sql = 'SELECT email, password FROM users WHERE email = :email AND password = :password';
-                //$req = $this->conn->prepare($sql);
-                //$req->bindParam(':email',$email, PDO::PARAM_STR);
-                //$req->bindParam(':password',$pass_a_decrypter, PDO::PARAM_STR);         
-                //$req->execute();
-                //if($req->rowCount() < 1)
-                //{
-                    //return 0;//utilisateur inexistant
-                //} 
-                //else
-                //{
-                    //return $resultat['password'];
-                //}    
-
-            //}
-            //else
-            //{
-                //return 0;//wrong password
-            //}
-            
+                return 1;
+            }    
 
         }
    

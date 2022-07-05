@@ -158,6 +158,10 @@ footer div{
 	height: 15px;
 
 }
+.li-ville{
+	background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('../images/fond.jpg');
+	border-image:url('../images/fond.jpg');
+}
 .connected{
 	float: right;
 	display: flex;

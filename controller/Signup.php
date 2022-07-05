@@ -6,6 +6,8 @@ require("../model/user.class.php");
     $password = $_POST["password"];
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
+    $code = $_POST["code"];
+    $ville = $_POST["ville"];
 
     //ici on met la première lettre du Nom et prénom en majuscule
     $first_name = ucfirst(strtolower($first_name));
@@ -31,7 +33,7 @@ require("../model/user.class.php");
     else
     {
         $insert = new UserModel();
-        $insert->insertUser($email,$password,$first_name,$last_name);  
+        $insert->insertUser($email,$password,$first_name,$last_name,$code,$ville);  
         echo ' <script type="text/javascript">';
         echo ' alert("Compte créé avec succes.");';
         echo ' window.setTimeout(function(){';

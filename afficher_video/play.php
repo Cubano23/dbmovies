@@ -92,7 +92,7 @@ $films = $film->getFilmsByUserId($_SESSION['id']);
         <td><?php echo $value['title'];?></td>
         <td><?php echo $value['movie_year'];?></td>
         <td>
-            <form action="../afficher_trailer/play.php" method="post" id="<?php echo $value['movie_id']; ?>">
+            <form action="../afficher_trailer/play.php" method="post">
                 <input type="hidden" value="<?php echo $value['title']; ?>" name="title">
                 <input type="hidden" value="<?php echo $value['movie_year']; ?>" name="year">
                 <input type="submit"  class="btn btn-primary" value="Play"/>
